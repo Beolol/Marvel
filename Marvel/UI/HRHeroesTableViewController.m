@@ -70,8 +70,9 @@ static CGFloat loadCellHeight = 30.0;
      onFailure:^(NSError *error, NSInteger statusCode) {
          NSLog(@"error = %@, code = %ld", [error localizedDescription], (long)statusCode);
          
-         if (!self.heroesArray) {
+         if (self.heroesArray.count == 0) {
              self.heroesArray = [[[HRFileManager sharedManager] getHeroesArray] copy];
+             [self.tableView reloadData];
          }
          
      }];

@@ -77,14 +77,13 @@ static NSString * const reuseIdentifier = @"HeroDescriptionCell";
              [weakCell resizeCellWithFrame:weakCell.frame];
          }
          failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-             
+             [weakCell resizeCellWithFrame:weakCell.frame];
          }];
     
         [heroCell resizeCellWithFrame:heroCell.frame];
     }
     return heroCell;
 }
-
 
 
 @end
